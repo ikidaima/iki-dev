@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="no"?>
+<!-- <svg width="450" height="375" version="1.1" xmlns="http://www.w3.org/2000/svg"> -->
+<svg width="920" height="764" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="cool-gradient" x1="0%" x2="22.495%" y1="97.437%" y2="0%">
+      <stop offset="35%" stop-color="#ff875f" />
+      <stop offset="75%" stop-color="#ff3393" />
+    </linearGradient>
+  </defs>
+  
+  <path d="M 368,53 
+          Q 460,4 552,0 
+          Q 695,0 797,108 
+          Q 900,203 920,367 
+          Q 920,536 777,658
+          Q 654,754 450,756 
+          Q 41,754 4,570
+          Q 0,479 59,387 
+          Q 215,143 368,53" 
+        fill="url(#cool-gradient)" />
+  
+</svg>

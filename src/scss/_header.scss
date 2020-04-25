@@ -1,0 +1,234 @@
+.header {
+  &__container {
+    padding-top: 29px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 780px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    margin-right: auto;
+    font-size: 16px;
+    color: #1f1f24;
+
+    &.header__nav--open {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-width: 320px;
+      height: 100vh;
+      padding-top: 29px;
+      padding-left: 40px;
+      background-image: linear-gradient(to bottom right, #fff 40%, rgba(255, 255, 255, 0.56));
+      z-index: 100;
+    }
+
+    &.header__nav--open > .nav__list {
+      display: block;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 1200px) {
+      margin: 0;
+
+      & .nav__list {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      &.header__nav--open {
+        padding-top: 25px;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    width: 45px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &-line {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 5px;
+      background-color: #ff3393ff;
+
+      &.header__burger-line--opend {
+        background-color: #ff339300;
+      }
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: #ff3393;
+      }
+
+      &::before {
+        bottom: 12px;
+        transition: transform .3s, bottom .3s .3s;
+      }
+
+      &::after {
+        top: 12px;
+        transition: transform .3s, top .3s .3s;
+      }
+
+      &--opend.header__burger-line::before {
+        opacity: 1;
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: bottom .3s, transform .3s .3s;
+      }
+
+      &--opend.header__burger-line::after {
+        opacity: 1;
+        top: 0;
+        transform: rotate(45deg);
+        transition: bottom .3s, transform .3s .3s;
+      }
+
+      @media (max-width: 480px) {
+        &,
+        &::before,
+        &::after {
+          height: 4px;
+        }
+
+        &::before {
+          bottom: 8px;
+        }
+
+        &::after {
+          top: 8px;
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      display: block;
+    }
+
+    @media (max-width: 480px) {
+      width: 25px;
+      height: 20px;
+    }
+  }
+
+  &__phone-number {
+    font-size: 25px;
+    color: #1f1f24;
+    font-weight: bold;
+    line-height: 1.2em;
+
+    @media (max-width: 1200px) {
+      margin-left: auto;
+      text-align: end;
+    }
+
+    @media (max-width: 780px) {
+      margin-right: auto;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    margin-left: 30px;
+    width: 260px;
+
+    @media (max-width: 480px) {
+      width: 27px;
+      height: 27px;
+      background-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 25px;
+  }
+}
+
+.button-inhert {
+  position: relative;
+  padding: 11px;
+  border: 1px solid #fc557c;
+  font-size: 16px;
+  color: #fc557c;
+  background-color: transparent;
+  cursor: pointer;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 50% 50% 0 0;
+    background-color: #fc557c;
+    transition: height .5s;
+  }
+
+  & span {
+    position: relative;
+    z-index: 1;
+    transition: color .5s;
+  }
+
+  @media (min-width: 780px) {
+    &:hover::before {
+      height: 200%;
+      transition: height .5s;
+    }
+
+    &:hover span {
+      color: #fff;
+      transition: color .5s;
+    }
+  }
+}
+
+.button-inherit--icon {
+  @media (max-width: 780px) {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    border-radius: 50%;
+    background-image: url("../../img/call-answer.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: ring-call 1.5s linear infinite;
+  }
+
+  @keyframes ring-call {
+    10% {transform: rotate(-15deg);}
+    20% {transform: rotate(15deg);}
+    30% {transform: rotate(-15deg);}
+    40% {transform: rotate(15deg);}
+    50% {transform: rotate(0);}
+  }
+  
+}
+

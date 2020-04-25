@@ -1,0 +1,45 @@
+.social {
+  &__list {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    @media (max-width: 480px) {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+  
+  &__link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url("../../img/social-sprite.gif");
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+  
+    &--vk {
+      background-position: -40px -2px;
+    }
+  
+    &--twit {
+      background-position: -121px -2px;
+    }
+  
+    &--fb {
+      background-position: -81px -2px;
+    }
+  
+    &--inst {
+      background-position: -199px -2px;
+    }
+  }
+}

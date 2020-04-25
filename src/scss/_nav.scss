@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    &--flex {
+      display: flex;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__list--flex &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__link {
+    display: inline-block;
+    &--hover {
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        border-bottom: 1px solid #fc557c;
+        transition: .3s;
+      }
+
+      &:hover {
+        color: #fc557c;
+        transition: .3s;
+        &::after {
+          width: 100%;
+          transition: .3s;
+        }
+      }
+    }
+  }
+}

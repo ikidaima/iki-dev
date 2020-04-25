@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Дмитрий Алексев - Официальный сайт</title>
+  <link rel="preload" href="fonts/Roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto/Roboto-Black.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="lib/css/swiper.min.css">
+  <link rel="stylesheet" href="build/css/main.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Дмитрий Алексев - Frontend-разработчик и веб-верстальщик. Вёрстка лендинг–страниц и сайтов любой сложности. Адаптивная вёрстка под все браузеры и устройства. Исправление и доработка существующей вёрстки">
+</head>
+
+<body>
+  <header class="header">
+    <div class="fixed-container header__container">
+      <nav class="nav header__nav">
+        <button class="header__burger" aria-label="Открыть меню">
+          <span class="header__burger-line" aria-hidden="true"></span>
+        </button>
+        <ul class="nav__list nav__list--flex">
+          <li class="nav__item"><a href="#section-skills" class="nav__link nav__link--hover">Услуги</a></li>
+          <li class="nav__item"><a href="#work-example" class="nav__link nav__link--hover">Портфолио</a></li>
+          <li class="nav__item"><a href="#cost" class="nav__link nav__link--hover">Стоимость</a></li>
+        </ul>
+      </nav>
+      <a href="tel:+74999955577" class="header__phone-number">+7 (499) 995-55-77</a>
+      <button class="button-inhert header__button button-inherit--icon">
+        <span>Заказать звонок</span>
+      </button>
+      <form class="form" action="send.php" method="POST">
+        <div class="form__container">
+          <button class="form__close" aria-label="Закрыть"></button>
+          <h3 class="form__title">Оставьте заявку на&nbsp;обратный звонок</h3>
+          <label for="form__name" class="form__label" id="form__label--name">Имя</label>
+          <input type="text" name="name" class="form__input" id="form__name" aria-labelledby="form__label--name">
+          <label for="form__phone" class="form__label" id="form__label--phone">Телефон</label>
+          <input type="text" name="phone" class="form__input" id="form__phone" aria-labelledby="form__label--phone">
+          <button type="submit" class="form__submit">Заказать звонок</button>
+          <label class="form__label--policy">
+            <input type="checkbox" name="policy" id="policy" class="form__policy">
+            Я ознакомлен и согласен с 
+            <a href="docs/Policy.pdf" class="form__link-policy" target="_blank">
+              &laquo;Политикой в отношении обработки персональных данных&raquo;
+            </a>
+          </label>
+        </div>
+      </form>
+    </div>
+  </header>
+  <main class="main">
+    <section class="portfolio" id="portfolio">
+      <div class="fixed-container portfolio__container">
+        <div class="portfolio__photo-wrapper">
+          <div class="elements" aria-hidden="true">
+            <span class="elements__item elements__item--1">{ }</span>
+            <span class="elements__item elements__item--2">&#60;div&#62;</span>
+            <span class="elements__item elements__item--3">#</span>
+            <span class="elements__item elements__item--4">&#60;div&#62;</span>
+            <span class="elements__item elements__item--5">&#60;/&#62;</span>
+          </div>
+          <svg class="portfolio__backgroung"
+            aria-hidden="true"
+            width="920" height="764"
+            viewBox="0 0 920 764"
+            preserveAspectRatio="none"
+            version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cool-gradient" x1="0%" x2="22.495%" y1="97.437%" y2="0%">
+                <stop offset="35%" stop-color="#ff875f" />
+                <stop offset="75%" stop-color="#ff3393" />
+              </linearGradient>
+            </defs>
+            <path d="M 368,53 
+                    Q 460,4 552,0 
+                    Q 695,0 797,108 
+                    Q 900,203 920,367 
+                    Q 920,536 777,658
+                    Q 654,754 450,756 
+                    Q 41,754 4,570
+                    Q 0,479 59,387 
+                    Q 215,143 368,53" 
+                  fill="url(#cool-gradient)" />
+          </svg>
+          <picture>
+            <source srcset="img/main-photo.webp">
+            <img class="portfolio__main-photo" src="img/main-photo.min.png" alt="Моя фотография">
+          </picture>
+        </div>
+        <h1 class="portfolio__heading">Дмитрий Алексеев</h1>
+        <p class="portfolio__profession">Frontend-разработчик и веб-верстальщик</p>
+        <a href="#section-skills" class="button portfolio__button">Узнать больше</a>
+      </div>
+    </section>
+    <section class="section-common skills" id="section-skills">
+      <div class="fixed-container section-common__container">
+        <h2 class="section-common__heading">Что я делаю</h2>
+        <ul class="skills__wrapper">
+          <li class="skills__item skills__item--coding">Вёрстка лендинг–страниц и&nbsp;сайтов любой сложности</li>
+          <li class="skills__item skills__item--adapting">Адаптивная вёрстка под все браузеры и&nbsp;устройства</li>
+          <li class="skills__item skills__item--programming">Frontend–разработка и&nbsp;программирование</li>
+          <li class="skills__item skills__item--fixing">Исправление и&nbsp;доработка существующей вёрстки</li>
+        </ul>
+        <a href="#cost" class="button section-common__button" tabindex="0" role="button">Узнать стоимость</a>
+      </div>
+    </section>
+    <section class="section-common work" id="work-example">
+      <div class="fixed-container section-common__container">
+        <h3 class="section-common__heading">Примеры моих работ</h3>
+        <div class="section-common__content">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <a class="swiper-slide">
+                <picture>
+                  <source srcset="img/psiholgy-site.webp">
+                  <img src="img/psiholgy-site.min.jpg" alt="Сайт психолога Веры Антоновой" class="work__img">
+                </picture>
+                <p class="work__description">Сайт психолога Веры&nbsp;Антоновой</p>
+              </a>
+              <a class="swiper-slide">
+                <picture>
+                  <source srcset="img/children-clothes.webp">
+                  <img src="img/children-clothes.min.jpg" alt="Сайт магазина детской одежды" class="work__img">
+                </picture>
+                <p class="work__description">Сайт магазина детской&nbsp;одежды</p>
+              </a>
+              <a class="swiper-slide">
+                <picture>
+                  <source srcset="img/fishing-shop.webp">
+                  <img src="img/fishing-shop.min.jpg" alt="Сайт магазина рыболов" class="work__img">
+                </picture>
+                <p class="work__description">Сайт магазина «Рыболов»</p>
+              </a>
+              <a class="swiper-slide">
+                <picture>
+                  <source srcset="img/fishing-shop.webp">
+                  <img src="img/fishing-shop.min.jpg" alt="Сайт магазина рыболов" class="work__img">
+                </picture>
+                <p class="work__description">Сайт магазина «Рыболов»</p>
+              </a>
+              <a class="swiper-slide">
+                <picture>
+                  <source srcset="img/fishing-shop.webp">
+                  <img src="img/fishing-shop.min.jpg" alt="Сайт магазина рыболов" class="work__img">
+                </picture>
+                <p class="work__description">Сайт магазина «Рыболов»</p>
+              </a>
+              <a class="swiper-slide">
+                <picture>
+                  <source srcset="img/fishing-shop.webp">
+                  <img src="img/fishing-shop.min.jpg" alt="Сайт магазина рыболов" class="work__img">
+                </picture>
+                <p class="work__description">Сайт магазина «Рыболов»</p>
+              </a>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <button class="swiper-button-prev" aria-label="swipe previosly"></button>
+          <button class="swiper-button-next" aria-label="swipe next"></button>
+        </div>
+        <a href="#" class="button section-common__button" id="order-project">Заказать проект</a>
+      </div>
+    </section>
+    <section class="section-cost" id="cost">
+      <div class="fixed-container section-cost__container">
+        <div class="elements" aria-hidden="true">
+          <span class="elements__item elements__item--6">{ }</span>
+          <span class="elements__item elements__item--7">&#60;/&#62;</span>
+          <span class="elements__item elements__item--8">#</span>
+          <span class="elements__item elements__item--9">&#60;div&#62;</span>
+          <span class="elements__item elements__item--10">{ }</span>
+        </div>
+        <h2 class="section-cost__heading">
+          Адаптивная вёрстка под все устройства
+          и&nbsp;браузеры от 1000 рублей всего за&nbsp;4&nbsp;часа.&#42;
+        </h2>
+        <p class="section-cost__postscript">
+          Срок и стоимость могут отличаться от&nbsp;заявленных и рассчитываются индивидуально,
+          в&nbsp;зависимости от&nbsp;сложности задач.
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="fixed-container footer__container">
+      <nav class="nav footer__nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link nav__link--hover">Услуги</a></li>
+          <li class="nav__item"><a href="#" class="nav__link nav__link--hover">Портфолио</a></li>
+          <li class="nav__item"><a href="#" class="nav__link nav__link--hover">Стоимость</a></li>
+        </ul>
+      </nav>
+      <address class="footer__contact-list">
+        <a href="tel:+74999957755" class="footer__address-link footer__address-link--phone">
+          <span class="nav__link--hover">+7 (499) 995-77-55</span>
+        </a>
+        <a href="mailto:dmitry@alekseev.com" class="footer__address-link footer__address-link--email">
+          <span class="nav__link--hover">dmitry@alekseev.com</span>
+        </a>
+      </address>
+      <div class="footer__wrapper-social">
+        <button class="button-inhert footer__button">
+          <span>Заказать звонок</span>
+        </button>
+        <ul class="footer__social-network social">
+          <li class="social__list"><a href="https://vk.com/share.php?url=https://iki-dev.ru/" class="social__link social__link--vk" target="_blank" aria-label="Вконтакте"></a></li>
+          <li class="social__list"><a href="https://twitter.com/intent/tweet?text=Классный%20сайт%20https://iki-dev.ru" class="social__link social__link--twit" target="_blank" aria-label="Твитер"></a></li>
+          <li class="social__list"><a href="https://www.facebook.com/dialog/share?app_id=2983575338353132&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer" class="social__link social__link--fb" target="_blank" aria-label="Фэйсбук"></a></li>
+          <li class="social__list"><a href="https://instagram.com" class="social__link social__link--inst" target="_blank" aria-label="Инстаграм"></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copyright">&copy;Дмитрий Алексеев, 2016 – 2018</p>
+  </footer>
+  <script src="lib/js/swiper.min.js"></script>
+  <script src="https://unpkg.com/imask"></script>
+  <script src="build/js/script.min.js"></script>
+</body>
+
+</html>

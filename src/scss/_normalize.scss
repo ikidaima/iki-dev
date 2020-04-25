@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #fbfbfb;
+  font: 20px/30px 'Roboto', 'Arial', sans-serif;
+  color: #8993ad;
+
+  @media (max-width: 780px) {
+    font-size: 16px;
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+picture {
+  height: 100%;
+}
+
+.fixed-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @media (max-width: 480px) {
+    &:not(.portfolio__container) {
+      padding: 0 20px;
+    }
+
+    &.footer__container {
+      display: block;
+      padding-top: 40px;
+      padding-bottom: 37px;
+    }
+  }
+}
