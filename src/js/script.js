@@ -27,6 +27,7 @@ const inputName = document.getElementById('form__name');
 const inputPhone = document.getElementById('form__phone');
 const formSubmit = document.querySelector('.form__submit');
 const inputPolicy = document.querySelector('.form__policy');
+const formShowMessage = document.querySelector('.form__answer');
 const phoneMask = IMask(inputPhone, {
   mask: '+{7}(000)000-00-00',
   lazy: false,  // make placeholder always visible
@@ -108,21 +109,58 @@ function bigWindowSize() {
 }
 
 function validateForm(event) {
-  debugger;
+  let valide = true;
+
+  event.preventDefault();
+
   if (inputName.value.length === 0) {
     inputName.classList.add('form__input--error');
-    event.preventDefault();
+    valide = false;
   }
   for (i = 0; i < inputPhone.value.length; i++) {
     if (inputPhone.value[i] == '_') {
       inputPhone.classList.add('form__input--error');
-      event.preventDefault();
+      valide = false;
       break;
     }
   }
   if (inputPolicy.checked === false) {
     alert('Примите соглашение с Политикой обработки персональных данных');
-    event.preventDefault();
+    valide = false;
+  }
+  
+  if (valide) {
+    let formData = new FormData(document.forms.form);
+    let xhr = new XMLHttpRequest();
+    let result = {};
+    xhr.open('POST', '../send.php');
+    xhr.send(formData);
+
+    xhr.onload = () => {
+      if (xhr.status == 200) {
+        formShowMessage.classList.add('form__answer--show');
+        formShowMessage.innerHTML = 'Спасибо за заявку! Мы с вами свяжемся в ближайшее время';
+        setTimeout(() => {
+          callBackForm.removeAttribute('style');
+          document.body.removeAttribute('style');
+          formShowMessage.classList.remove('form__answer--show');
+          inputName.value = '';
+          phoneMask.value = '+7(___)___-__-__';
+          inputPolicy.checked = false;
+        }, 2000);
+      } else {
+        formShowMessage.classList.add('form__answer--show');
+        formShowMessage.innerHTML = 'Упс, что-то пошло не так... Попробуйте чуть позже';
+        setTimeout(() => {
+          callBackForm.removeAttribute('style');
+          document.body.removeAttribute('style');
+          formShowMessage.classList.remove('form__answer--show');
+          inputName.value = '';
+          phoneMask.value = '+7(___)___-__-__';
+          inputPolicy.checked = false;
+        }, 2000);
+      }
+    }
   }
 }
 
