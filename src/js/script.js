@@ -73,6 +73,10 @@ function goLink(event) {
     document.body.removeAttribute('style');
     menuActive = false;
   }
+
+  if (event.target.matches('.nav__link')) {
+    scrollToSection(event);
+  }
 }
 
 function activeForm(event) {
@@ -104,6 +108,7 @@ function bigWindowSize() {
 }
 
 function validateForm(event) {
+  debugger;
   if (inputName.value.length === 0) {
     inputName.classList.add('form__input--error');
     event.preventDefault();
@@ -119,4 +124,13 @@ function validateForm(event) {
     alert('Примите соглашение с Политикой обработки персональных данных');
     event.preventDefault();
   }
+}
+
+function scrollToSection(event) {
+  const href = event.target.getAttribute('href').slice(1);
+  const selectSection = document.getElementById(href);
+
+  selectSection.scrollIntoView({block: "start", behavior: "smooth"})
+  
+  event.preventDefault();
 }
